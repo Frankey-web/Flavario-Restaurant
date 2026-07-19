@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="order.css">
+        <title>Order Online</title>
+</head>
+
+<body>
+        <header class="header">
+
+    <div class="container">
+
+        <a href="#" class="logo">
+            <img src="logo.svg" alt="Flavorio">
+        </a>
+
+        <nav class="navbar">
+
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+
+
+                <li><a href="menu.html">Menu</a></li>
+
+                <li><a href="gallery.html">Gallery</a></li>
+
+                <li><a href="reservation.html">Reservations</a></li>
+                
+                <li><a href="about.html">About</a></li>
+
+
+                <li><a href="contact.html">Contact</a></li>
+
+                <li>
+                    <a href="#" class="active">
+                        Order Online
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+<div class="cart-btn">
+
+    <img src="cart.svg" alt="Cart">
+
+    <span id="cart-count">0</span>
+
+</div>
+
+        <div class="menu-toggle">
+
+            <img src="menu.svg" alt="Menu">
+
+        </div>
+
+    </div>
+
+</header>
+<section class="hero">
+
+    <div class="hero-container">
+
+        <div class="hero-text">
+
+            <span class="hero-tag">ORDER ONLINE</span>
+
+            <h1>
+                Delicious Food,<br>
+                Delivered to You
+            </h1>
+
+            <div class="title-line">
+
+                <span></span>
+
+                <img src="fork.svg" alt="">
+
+                <span></span>
+
+            </div>
+
+            <p>
+                Choose your favorite dishes from our menu
+                and enjoy a great meal at your convenience.
+            </p>
+
+        </div>
+    </div>
+
+</section>
+
+<section class="service-boxes">
+
+    <div class="service-box">
+
+        <img src="delivery.svg" alt="">
+
+        <div>
+            <h3>Fast Delivery</h3>
+            <p>Quick delivery to your doorstep</p>
+        </div>
+
+    </div>
+
+    <div class="service-box">
+
+        <img src="shield.svg" alt="">
+
+        <div>
+            <h3>Safe & Hygienic</h3>
+            <p>We follow the highest standards</p>
+        </div>
+
+    </div>
+
+    <div class="service-box">
+
+        <img src="card.svg" alt="">
+
+        <div>
+            <h3>Secure Payment</h3>
+            <p>100% secure payment methods</p>
+        </div>
+
+    </div>
+
+    <div class="service-box">
+
+        <img src="clock.svg" alt="">
+
+        <div>
+            <h3>Track Order</h3>
+            <p>Real-time order tracking</p>
+        </div>
+
+    </div>
+
+</section>
+<script>
+    const menu = document.querySelector(".navbar");
+const toggle = document.querySelector(".menu-toggle");
+
+toggle.addEventListener("click",()=>{
+
+    menu.classList.toggle("active");
+
+});
+</script>
+
+<section class="menu-section">
+
+    <div class="menu-container">
+
+
+<aside class="order-sidebar full-width">
+
+<div class="order-header">
+
+    <div>
+
+        <h2>Your Order</h2>
+
+        <p>Review your selected meals before checkout.</p>
+
+    </div>
+
+    <a href="menu.html" class="continue-shopping">
+
+        + Add More Items
+
+    </a>
+
+</div>
+
+
+    <div class="delivery-status">
+
+<p id="delivery-message">
+
+Loading...
+
+</p>
+
+        <div class="progress">
+
+<div class="progress-bar" id="progress-bar"></div>
+
+        </div>
+
+    </div>
+
+
+<div class="cart-items" id="cart-items">
+
+    <div class="empty-cart">
+
+        <img src="cart.svg">
+
+        <h3>Your cart is empty</h3>
+
+        <p>
+
+            Browse our menu and add delicious meals.
+
+        </p>
+
+        <a href="menu.html">
+
+            Browse Menu
+
+        </a>
+
+    </div>
+
+</div>
+    <!-- Totals -->
+
+    <div class="totals">
+
+        <div>
+            <span>Subtotal</span>
+<span id="subtotal">$0.00</span>
+        </div>
+
+        <div>
+            <span>Delivery Fee</span>
+<span id="delivery">$0.00</span>
+        </div>
+
+        <div>
+            <span>Tax (8%)</span>
+<span id="tax">$0.00</span>
+        </div>
+
+    </div>
+
+    <div class="grand-total">
+
+        <span>Total</span>
+
+<h3 id="total">$0.00</h3>
+
+    </div>
+
+    <button class="checkout-btn">
+
+        Proceed to Checkout
+
+    </button>
+
+    <button class="continue-btn">
+
+        Continue Shopping
+
+    </button>
+
+    <div class="delivery-time">
+
+        <h4>Estimated Delivery Time</h4>
+
+        <h2>30 - 40 mins</h2>
+
+    </div>
+
+    <div class="delivery-card">
+
+        <img src="delivery.svg" alt="">
+
+        <div>
+
+            <h3>We Deliver Happiness!</h3>
+
+            <p>Hot, fresh and fast to your doorstep.</p>
+
+        </div>
+
+    </div>
+<section class="order-note">
+
+    <div class="note-container">
+
+        <div class="note-left">
+
+            <div class="note-icon">
+
+                <img src="note.svg" alt="Note">
+
+            </div>
+
+            <div class="note-text">
+
+                <h2>Have a Special Request?</h2>
+
+                <p>
+                    Add a note and let us know if you have any food
+                    allergies or special instructions.
+                </p>
+
+            </div>
+
+        </div>
+
+        <button class="note-btn">
+
+            Add Order Note
+
+            <img src="edit.svg" alt="Edit">
+
+        </button>
+
+    </div>
+
+</section>
+</aside>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Column 1 -->
+
+        <div class="footer-col">
+
+            <img src="logo.svg" class="footer-logo" alt="Flavorio">
+
+            <p>
+                Enjoy delicious meals prepared with fresh ingredients and delivered with exceptional service.
+            </p>
+
+            <div class="social-icons">
+
+                <a href="#"><img src="facebook.svg" alt=""></a>
+
+                <a href="#"><img src="instagram.svg" alt=""></a>
+
+                <a href="#"><img src="twitter.svg" alt=""></a>
+
+
+            </div>
+
+        </div>
+
+        <!-- Column 2 -->
+
+
+        <!-- Column 3 -->
+
+        <div class="footer-col">
+
+            <h3>Opening Hours</h3>
+
+            <p>Monday - Friday</p>
+
+            <span>9:00 AM - 10:00 PM</span>
+
+            <p>Saturday - Sunday</p>
+
+            <span>10:00 AM - 11:00 PM</span>
+
+        </div>
+
+        <!-- Column 4 -->
+
+        <div class="footer-col">
+
+            <h3>Contact Us</h3>
+
+            <p>123 Flavor Street,<br>Food City</p>
+
+            <p>+1 (234) 567-890</p>
+
+            <p>info@flavorio.com</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>© 2026 Flavorio. All Rights Reserved.</p>
+
+        <div class="footer-links">
+
+            <a href="#">Privacy Policy</a>
+
+            <a href="#">Terms & Conditions</a>
+
+        </div>
+
+    </div>
+
+</footer>
+<!-- Order Note Modal -->
+<div id="noteModal" class="message-modal">
+
+    <div class="message-box">
+
+        <h2>Add Order Note</h2>
+
+        <p>
+            Let us know about any dietary preferences, or special instructions for your order.
+        </p>
+
+        <textarea
+            id="orderNote"
+            placeholder="Write your order note here..."
+            rows="6"></textarea>
+
+        <button id="sendNoteBtn">
+            Send Note
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Success Modal -->
+<div id="noteSuccessModal" class="message-modal">
+
+    <div class="message-box">
+
+        <img src="check-circle.svg" alt="Success">
+
+        <h2>Order Note Received</h2>
+
+        <p>
+            Your order note has been received and we are working on it. Our team will do their best to accommodate your request.
+        </p>
+
+        <button id="closeSuccessBtn">
+            Done
+        </button>
+
+    </div>
+
+</div>
+<script src="order.js"></script>
+</body>
+
+</html>
