@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Menu</title>
+        <link rel="stylesheet" href="menu.css">
+
+</head>
+
+<body>
+        <header>
+
+    <div class="logo">
+
+        <img src="logo.svg" alt="">
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+
+
+        <a class="active" href="menu.html">Menu</a>
+
+        <a href="gallery.html">Gallery</a>
+
+        <a href="reservation.html">Reservations</a>
+        
+            <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+<a href="order.html" class="order-btn">
+
+    Order Online
+
+    <img src="bag.svg" alt="">
+
+    <span id="cart-count" class="cart-count">0</span>
+
+</a>
+</header>
+
+<section class="menu-hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <span class="hero-subtitle">
+                OUR MENU
+            </span>
+
+            <h1>
+                Delicious Food,<br>
+                Made for You
+            </h1>
+
+            <img src="fork.svg" class="hero-icon" alt="">
+
+            <p>
+                Explore our carefully crafted menu made with
+                fresh ingredients and a lot of love.
+            </p>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img src="hero-pasta.png" alt="">
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="menu-tabs">
+
+    <div class="tabs-container">
+
+        <a href="#" class="tab active" data-filter="all">All Menu</a>
+
+            <img src="all-menu.svg" alt="">
+
+ 
+
+        </a>
+
+<a href="#" class="tab" data-filter="starters">Starters</a>
+
+            <img src="starter.svg" alt="">
+
+   
+
+        </a>
+ 
+<a href="#" class="tab" data-filter="main-courses">Main Courses</a>
+
+            <img src="main-course.svg" alt="">
+
+
+
+        </a>
+
+<a href="#" class="tab" data-filter="pizzas">Pizzas</a>
+
+
+            <img src="pizza.svg" alt="">
+
+
+        </a>
+
+<a href="#" class="tab" data-filter="desserts">Desserts</a>
+
+            <img src="dessert.svg" alt="">
+
+
+
+        </a>
+
+
+<a href="#" class="tab" data-filter="drinks">Drinks</a>
+            <img src="drink.svg" alt="">
+
+
+        </a>
+
+    </div>
+
+</section>
+
+<section class="menu-section" id="starters">
+
+    <div class="section-title">
+
+        <div class="line"></div>
+
+        <div class="title-content">
+
+            <h2>Starters</h2>
+
+            <img src="fork.svg" alt="">
+
+        </div>
+
+        <div class="line"></div>
+
+    </div>
+
+<div class="menu-grid" id="starters-grid"></div>
+
+
+</section>
+
+<section class="menu-section" id="main-courses">
+
+    <div class="section-title">
+
+        <div class="line"></div>
+
+        <div class="title-content">
+
+            <h2>Main Courses</h2>
+
+            <img src="fork.svg" alt="">
+
+        </div>
+
+        <div class="line"></div>
+
+    </div>
+
+<div class="menu-grid" id="main-grid"></div>
+
+</section>
+
+<section class="menu-section" id="pizzas">
+
+    <div class="section-title">
+
+        <div class="line"></div>
+
+        <div class="title-content">
+
+            <h2>Pizzas</h2>
+
+            <img src="fork.svg" alt="">
+
+        </div>
+
+        <div class="line"></div>
+
+    </div>
+
+<div class="menu-grid" id="pizza-grid"></div>
+
+</section>
+<section class="menu-section desserts" id="desserts">
+
+    <div class="section-title">
+
+        <div class="line"></div>
+
+        <div class="title-content">
+            <h2>Desserts</h2>
+            <img src="fork.svg" alt="">
+        </div>
+
+        <div class="line"></div>
+
+    </div>
+
+<div class="menu-grid" id="dessert-grid"></div>
+
+</section>
+
+<section class="menu-section drinks" id="drinks">
+
+    <div class="section-title">
+
+        <div class="line"></div>
+
+        <div class="title-content">
+            <h2>Drinks</h2>
+            <img src="fork.svg" alt="">
+        </div>
+
+        <div class="line"></div>
+
+    </div>
+
+<div class="menu-grid" id="drink-grid"></div>
+
+</section>
+<a href="order.html" class="floating-cart">
+
+    <img src="cart.svg" alt="Cart">
+
+    <span id="cart-count-floating">0</span>
+
+</a>
+<section class="cta-section">
+
+    <div class="cta-overlay"></div>
+
+    <div class="cta-content">
+
+        <img src="divider.svg" class="cta-divider" alt="">
+
+        <h2>Craving Something Delicious?</h2>
+
+        <p>
+            Reserve your table today and enjoy an unforgettable dining
+            experience crafted with passion and fresh ingredients.
+        </p>
+
+        <a href="reservation.html" class="cta-btn">
+            Reserve Your Table
+        </a> 
+
+    </div>
+
+</section>
+
+<script>
+    const tabs = document.querySelectorAll(".tab");
+const sections = document.querySelectorAll(".menu-section");
+
+tabs.forEach(tab => {
+
+    tab.addEventListener("click", e => {
+
+        e.preventDefault();
+
+        tabs.forEach(btn => btn.classList.remove("active"));
+        tab.classList.add("active");
+
+        const filter = tab.dataset.filter;
+
+        sections.forEach(section => {
+
+            if (filter === "all") {
+
+                section.style.display = "block";
+
+            } else {
+
+                section.style.display =
+                    section.id === filter ? "block" : "none";
+
+            }
+
+        });
+
+    });
+
+});
+</script>
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+
+                <img src="logo.svg" alt="Flavorio Logo" class="footer-logo">
+
+                <p>
+                    Experience exceptional dining with carefully crafted
+                    dishes, warm hospitality, and unforgettable moments.
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>Opening Hours</h3>
+
+                <ul>
+
+                    <li>Monday - Friday</li>
+                    <li>10:00 AM - 10:00 PM</li>
+
+                    <li>Saturday</li>
+                    <li>9:00 AM - 11:00 PM</li>
+
+                    <li>Sunday</li>
+                    <li>9:00 AM - 9:00 PM</li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Contact</h3>
+
+                <ul>
+
+                    <li>123 Restaurant Street</li>
+
+                    <li>New York, NY</li>
+
+                    <li>+1 (234) 567-890</li>
+
+                    <li>hello@flavorio.com</li>
+
+                </ul>
+
+                <div class="footer-social">
+
+                    <a href="#"><img src="facebook.svg" alt=""></a>
+
+                    <a href="#"><img src="instagram.svg" alt=""></a>
+
+                    <a href="#"><img src="twitter.svg" alt=""></a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Flavorio. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+<!-- BOOKING MODAL -->
+
+<div class="booking-modal" id="bookingModal">
+
+    <div class="booking-box">
+
+        <button class="close-modal">&times;</button>
+
+        <h2>Reserve Your Table</h2>
+
+        <p>Reserve a table and enjoy an unforgettable dining experience.</p>
+
+        <form>
+
+            <div class="input-group">
+
+                <label>Full Name</label>
+
+                <input type="text" placeholder="Enter your name" required>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Email</label>
+
+                <input type="email" placeholder="Enter your email" required>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Phone Number</label>
+
+                <input type="tel" placeholder="Enter phone number" required>
+
+            </div>
+
+            <div class="double-input">
+
+                <div class="input-group">
+
+                    <label>Date</label>
+
+                    <input type="date" required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Time</label>
+
+                    <input type="time" required>
+
+                </div>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Guests</label>
+
+                <select required>
+
+                    <option>1 Person</option>
+                    <option>2 People</option>
+                    <option>3 People</option>
+                    <option>4 People</option>
+                    <option>5 People</option>
+                    <option>6+ People</option>
+
+                </select>
+
+            </div>
+
+            <button class="reserve-btn" type="submit">
+
+                Reserve Table
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+<!-- ==========================
+     MINI CART
+========================== -->
+
+<div class="mini-cart-overlay"></div>
+
+<div class="mini-cart" id="miniCart">
+
+    <div class="mini-cart-header">
+
+        <h3>Your Order</h3>
+
+        <button id="closeMiniCart">&times;</button>
+
+    </div>
+
+    <div class="mini-cart-items" id="miniCartItems">
+
+        <p class="empty-cart">
+            Your cart is empty.
+        </p>
+
+    </div>
+
+    <div class="mini-cart-footer">
+
+        <div class="mini-total">
+
+            <span>Subtotal</span>
+
+            <strong id="miniSubtotal">$0.00</strong>
+
+        </div>
+
+        <a href="order.html" class="view-cart-btn">
+
+            View Cart →
+
+        </a>
+
+    </div>
+
+</div>
+<div id="toast" class="toast"></div>
+  <script src="menu-api.js"></script>
+<script>
+
+const modal=document.getElementById("bookingModal");
+
+const openBtns=document.querySelectorAll(".open-modal");
+
+const closeBtn=document.querySelector(".close-modal");
+
+openBtns.forEach(btn=>{
+
+btn.addEventListener("click",function(e){
+
+e.preventDefault();
+
+modal.classList.add("show");
+
+});
+
+});
+
+closeBtn.addEventListener("click",()=>{
+
+modal.classList.remove("show");
+
+});
+
+window.addEventListener("click",function(e){
+
+if(e.target===modal){
+
+modal.classList.remove("show");
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>
