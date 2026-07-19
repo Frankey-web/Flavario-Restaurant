@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reservations | Flavorio</title>
+
+<link rel="stylesheet" href="reservation.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="header-container">
+
+<a href="#" class="logo">
+
+<img src="logo.svg" alt="Flavorio">
+
+</a>
+
+<nav class="nav">
+
+<a href="index.html">Home</a>
+
+
+<a href="menu.html">Menu</a>
+
+<a href="gallery.html">Gallery</a>
+
+<a href="reservation.html" class="active">Reservations</a>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+</nav>
+
+<a href="#" class="order-btn">
+
+Order Online
+
+<img src="bag.svg" alt="">
+
+</a>
+
+</div>
+
+</header>
+
+<!--=========================
+HERO
+==========================-->
+
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-container">
+
+        <!-- LEFT -->
+
+        <div class="hero-content">
+
+            <span class="sub-title">RESERVATION</span>
+
+            <h1>
+                Reserve Your Table
+                <br>
+                for a Perfect Dining
+                <br>
+                Experience
+            </h1>
+
+            <div class="divider">
+                <span></span>
+                <img src="fork.svg" alt="">
+                <span></span>
+            </div>
+
+            <p>
+                Whether it's a romantic dinner, a family gathering,
+                or a special celebration, we've got the perfect
+                table waiting for you.
+            </p>
+
+            <div class="hero-list">
+
+                <div class="list-item">
+                    <img src="check.svg" alt="">
+                    <span>Easy & Quick Booking</span>
+                </div>
+
+                <div class="list-item">
+                    <img src="check.svg" alt="">
+                    <span>Confirmed Instantly</span>
+                </div>
+
+                <div class="list-item">
+                    <img src="check.svg" alt="">
+                    <span>Best Tables, Always</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="booking-card">
+
+            <h2>
+                <img src="calendar.svg" alt="">
+                Reserve a Table
+            </h2>
+
+            <form id="reservationForm">
+
+                <div class="input-box">
+                    <div class="input-wrapper">
+                    <label>Full Name *</label>
+<input type="text" id="fullName" placeholder="Enter your full name">
+
+    <img src="user.svg" alt="">
+                    </div>
+
+                </div>
+
+                <div class="input-box">
+                    <label>Email Address *</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+
+                <div class="input-box">
+                    <label>Phone Number *</label>
+                    <input type="tel" placeholder="Enter your phone number">
+                </div>
+
+                <div class="form-row">
+
+                    <div class="input-box">
+                        <label>Date *</label>
+                     <input type="date" id="reservationDate">
+                    </div>
+
+                    <div class="input-box">
+                        <label>Time *</label>
+                        <input type="time" id="reservationTime">
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="input-box">
+                        <label>Guests *</label>
+
+<select id="guestCount">
+    <option value="">Number of guests</option>
+    <option value="1">1 Guest</option>
+    <option value="2">2 Guests</option>
+    <option value="3">3 Guests</option>
+    <option value="4">4 Guests</option>
+    <option value="5">5 Guests</option>
+    <option value="6">6 Guests</option>
+    <option value="7">7 Guests</option>
+    <option value="8">8 Guests</option>
+</select>
+                      
+
+                    </div>
+
+                    <div class="input-box">
+                        <label>Occasion</label>
+
+                        <select>
+                            <option>Select Occasion</option>
+                            <option>Birthday</option>
+                            <option>Anniversary</option>
+                            <option>Business Meeting</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Special Request</label>
+
+<textarea
+    id="specialRequest"
+    rows="4"
+    placeholder="Any special requests or notes?">
+</textarea>
+
+                </div>
+
+<button type="submit" class="reserve-btn">
+    Reserve Now
+</button>
+
+<button type="button" id="viewPassBtn" class="view-pass-btn" >
+    View Reservation Pass
+</button>
+
+<button type="buuton" id="deleteReservationBtn" class="view-pass-btn">
+    Delete Reservation
+</button>
+                    
+                <p class="secure">
+                    🔒 Your information is secure and will not be shared.
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--=========================
+WHY RESERVE
+==========================-->
+
+<section class="why-reserve">
+
+    <div class="section-title">
+
+        <h2>Why Reserve With Us?</h2>
+
+        <div class="divider center-divider">
+
+            <span></span>
+
+            <img src="fork.svg" alt="">
+
+            <span></span>
+
+        </div>
+
+    </div>
+
+    <div class="reserve-grid">
+
+        <div class="reserve-card">
+
+            <div class="icon-box">
+                <img src="calendar.svg" alt="">
+            </div>
+
+            <h3>Guaranteed Seating</h3>
+
+            <p>
+                Reserve your table in advance and enjoy a
+                hassle-free dining experience.
+            </p>
+
+        </div>
+
+        <div class="reserve-card">
+
+            <div class="icon-box">
+                <img src="star.svg" alt="">
+            </div>
+
+            <h3>Best Tables</h3>
+
+            <p>
+                Get the best seats in the house,
+                every time you reserve.
+            </p>
+
+        </div>
+
+        <div class="reserve-card">
+
+            <div class="icon-box">
+                <img src="clock.svg" alt="">
+            </div>
+
+            <h3>Save Time</h3>
+
+            <p>
+                Skip the wait. Your table
+                will be ready when you arrive.
+            </p>
+
+        </div>
+
+        <div class="reserve-card">
+
+            <div class="icon-box">
+                <img src="bell.svg" alt="">
+            </div>
+
+            <h3>Special Occasions</h3>
+
+            <p>
+                Celebrate your special moments with us
+                and make memories to cherish.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--=========================
+IMPORTANT DETAILS
+==========================-->
+
+<section class="details">
+
+    <div class="details-container">
+
+        <!-- Left Image -->
+
+        <div class="details-image">
+
+            <img src="restaurant.jpg" alt="Restaurant">
+
+        </div>
+
+        <!-- Right Content -->
+
+        <div class="details-content">
+
+            <span class="section-subtitle">
+                INFORMATION
+            </span>
+
+            <h2>Important Details</h2>
+
+            <div class="divider">
+
+                <span></span>
+
+                <img src="fork.svg" alt="">
+
+                <span></span>
+
+            </div>
+
+            <div class="info-grid">
+
+                <div class="info-item">
+
+                    <img src="clock.svg" alt="">
+
+                    <div>
+
+                        <h3>Opening Hours</h3>
+
+                        <p>Mon – Fri: 9:00 AM – 10:00 PM</p>
+                        <p>Sat – Sun: 10:00 AM – 11:00 PM</p>
+
+                    </div>
+
+                </div>
+
+                <div class="info-item">
+
+                    <img src="location.svg" alt="">
+
+                    <div>
+
+                        <h3>Our Location</h3>
+
+                        <p>
+                            123 Food Street,
+                            <br>
+                            Food City, FC 10101
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="info-item">
+
+                    <img src="phone.svg" alt="">
+
+                    <div>
+
+                        <h3>Contact Us</h3>
+
+                        <p>+1234 567 8900</p>
+
+                        <p>info@flavorio.com</p>
+
+                    </div>
+
+                </div>
+
+                <div class="info-item">
+
+                    <img src="note.svg" alt="">
+
+                    <div>
+
+                        <h3>Note</h3>
+
+                        <p>
+                            We hold reserved tables for
+                            15 minutes past your reservation
+                            time.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--=========================
+CTA
+==========================-->
+
+<section class="cta">
+
+    <div class="cta-overlay"></div>
+
+    <div class="cta-content">
+
+        <div class="divider center-divider">
+
+            <span></span>
+
+            <img src="fork.svg" alt="">
+
+            <span></span>
+
+        </div>
+
+        <h2>Let's Make It a Memorable Meal</h2>
+
+        <p>
+            Good food, great ambiance, and even better company.
+            <br>
+            We can't wait to welcome you!
+        </p>
+
+        <a href="#" class="cta-btn">
+
+            Reserve Your Table
+
+            <img src="calendar.svg" alt="">
+
+        </a>
+
+    </div>
+
+</section>
+
+<!--=========================
+FOOTER
+==========================-->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Column 1 -->
+        <div class="footer-col">
+
+            <img src="logo.svg" alt="Flavorio" class="footer-logo">
+
+            <p class="footer-text">
+                Good Food, Good Mood.
+                <br>
+                Thank you for being part of our story.
+            </p>
+
+            <div class="social-links">
+
+                <a href="#"><img src="facebook.svg" alt=""></a>
+
+                <a href="#"><img src="instagram.svg" alt=""></a>
+
+                <a href="#"><img src="twitter.svg" alt=""></a>
+
+                <a href="#"><img src="youtube.svg" alt=""></a>
+
+            </div>
+
+        </div>
+
+        <!-- Column 2 -->
+
+ 
+
+        <!-- Column 3 -->
+
+        <div class="footer-col">
+
+            <h3>Opening Hours</h3>
+
+            <p>Mon — Fri: 9:00 AM – 10:00 PM</p>
+
+            <p>Sat — Sun: 10:00 AM – 11:00 PM</p>
+
+            <br>
+
+            <p>Kitchen Closes at 10:30 PM</p>
+
+        </div>
+
+        <!-- Column 4 -->
+
+        <div class="footer-col">
+
+            <h3>Contact Us</h3>
+
+            <p>
+                <img src="phone.svg" alt="">
+                +1234 567 8900
+            </p>
+
+            <p>
+                <img src="mail.svg" alt="">
+                info@flavorio.com
+            </p>
+
+            <p>
+                <img src="location.svg" alt="">
+                123 Food Street,
+                <br>
+                Food City, FC 10101
+            </p>
+
+        </div>
+
+    </div>
+    <!--=========================
+LOCATION MAP
+==========================-->
+
+<section class="map-section">
+
+    <iframe
+    src="https://www.google.com/maps?q=Abakaliki+Township+Stadium,+Abakaliki,+Ebonyi+State,+Nigeria&output=embed"
+    width="100%"
+    height="450"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+</section>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2025 Flavorio Restaurant. All Rights Reserved.
+        </p>
+
+        <div>
+
+            <a href="#">Privacy Policy</a>
+
+            <span>|</span>
+
+            <a href="#">Terms & Conditions</a>
+
+        </div>
+
+    </div>
+
+</footer>
+<div class="reservation-modal" id="reservationModal">
+
+    <div class="reservation-box">
+
+<div class="status-wrapper">
+
+    <div class="spinner" id="spinner"></div>
+
+    <img
+        src="loading.svg"
+        alt=""
+        id="statusIcon"
+        class="status-icon">
+
+</div>
+        <h2 id="modalTitle">
+            Checking table availability...
+        </h2>
+
+        <p id="modalMessage">
+            Please wait while we search for the best available table.
+        </p>
+
+        <div class="reservation-result" id="reservationResult"></div>
+
+        <button id="doneBtn">
+            Done
+        </button>
+
+    </div>
+
+</div>
+
+<div class="pass-modal" id="passModal">
+
+<div class="pass-card">
+
+    <div class="pass-overlay"></div>
+
+    <div class="pass-content">
+
+        <img src="logo.svg" class="pass-logo" alt="">
+
+        <span class="pass-subtitle">
+            FLAVORIO RESTAURANT
+        </span>
+<img src="reservation-pass.svg" class="pass-icon" alt="">
+        <h2>
+            Reservation Pass
+        </h2>
+
+        <img src="divider.svg" class="gold-divider" alt="">
+
+        <div id="passContent"></div>
+
+        <div class="pass-footer">
+
+            Show this reservation pass to our receptionist
+            upon arrival and you'll be escorted directly
+            to your reserved table.
+
+        </div>
+
+        <button onclick="window.location='reservation.html'" id="closePassBtn"  type="button" class="reserve-btn">
+
+            Close Pass
+
+        </button>
+
+    </div>
+
+</div>
+</div>
+<script src="reservation.js"></script>
+</body>
+
+</html>
