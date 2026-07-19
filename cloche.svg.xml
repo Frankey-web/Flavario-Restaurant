@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64 64"
+     fill="none"
+     stroke="#D89B2B"
+     stroke-width="1"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+    <!-- Top Knob -->
+    <circle cx="32" cy="18" r="3"/>
+
+    <!-- Dome -->
+    <path d="M12 40
+             C12 25 21 14 32 14
+             C43 14 52 25 52 40"/>
+
+    <!-- Plate -->
+    <path d="M8 40H56"/>
+
+    <!-- Base -->
+    <path d="M16 46H48"/>
+
+</svg>
