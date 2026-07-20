@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64 64"
+     fill="none"
+     stroke="#D89B2B"
+     stroke-width="1.8"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+    <!-- Outer Badge -->
+    <circle cx="32" cy="24" r="12"/>
+
+    <!-- Star -->
+    <path d="M32 17
+             L34 22
+             L39 22.5
+             L35 26
+             L36 31
+             L32 28.5
+             L28 31
+             L29 26
+             L25 22.5
+             L30 22
+             Z"/>
+
+    <!-- Left Ribbon -->
+    <path d="M26 35
+             L22 48
+             L28 45
+             L32 50
+             L35 38"/>
+
+    <!-- Right Ribbon -->
+    <path d="M38 35
+             L42 48
+             L36 45
+             L32 50
+             L29 38"/>
+
+</svg>

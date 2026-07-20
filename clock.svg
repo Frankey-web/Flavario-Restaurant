@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64 64"
+     fill="none"
+     stroke="#D89B2B"
+     stroke-width="1.8"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+    <!-- Clock Outer Circle -->
+    <circle cx="32" cy="32" r="20"/>
+
+    <!-- Center Dot -->
+    <circle cx="32" cy="32" r="1.5" fill="#D89B2B" stroke="none"/>
+
+    <!-- Hour Hand -->
+    <path d="M32 32V22"/>
+
+    <!-- Minute Hand -->
+    <path d="M32 32L40 37"/>
+
+    <!-- Top Tick -->
+    <path d="M32 15V17"/>
+
+    <!-- Bottom Tick -->
+    <path d="M32 47V49"/>
+
+    <!-- Left Tick -->
+    <path d="M15 32H17"/>
+
+    <!-- Right Tick -->
+    <path d="M47 32H49"/>
+
+</svg>

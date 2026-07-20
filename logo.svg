@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+
+  <!-- Outer Circle -->
+  <circle cx="64" cy="64" r="58"
+          fill="none"
+          stroke="#D89B2B"
+          stroke-width="2"/>
+
+  <!-- Chef Hat -->
+  <path
+        d="M39 45
+           C34 45 30 41 30 36
+           C30 31 34 27 39 27
+           C40 21 46 17 52 20
+           C55 13 64 12 69 18
+           C75 14 83 17 86 24
+           C93 23 98 28 98 35
+           C98 41 93 45 88 45
+           Z"
+        fill="#D89B2B"/>
+
+  <!-- Hat Base -->
+  <rect
+        x="42"
+        y="43"
+        width="44"
+        height="7"
+        rx="3.5"
+        fill="#D89B2B"/>
+
+  <!-- Face -->
+  <circle
+          cx="64"
+          cy="61"
+          r="13"
+          fill="#D89B2B"/>
+
+  <!-- Eyes -->
+  <circle
+          cx="59"
+          cy="59"
+          r="1.6"
+          fill="#ffffff"/>
+
+  <circle
+          cx="69"
+          cy="59"
+          r="1.6"
+          fill="#ffffff"/>
+
+  <!-- Smile -->
+  <path
+        d="M58 66
+           Q64 71
+           70 66"
+        stroke="#ffffff"
+        stroke-width="1.8"
+        fill="none"
+        stroke-linecap="round"/>
+
+  <!-- Mustache -->
+  <path
+        d="M54 64
+           C57 62 60 62 64 65
+           C68 62 71 62 74 64"
+        stroke="#ffffff"
+        stroke-width="1"
+        fill="none"
+        stroke-linecap="round"/>
+
+  <!-- Collar -->
+  <path
+        d="M55 78
+           L64 87
+           L73 78"
+        stroke="#D89B2B"
+        stroke-width="2"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+</svg>
