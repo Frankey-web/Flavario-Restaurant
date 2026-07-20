@@ -4,7 +4,7 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Contact us</title>
+        <title>Flavario-Restaurant | Contact Page</title>
         <link rel="stylesheet" href="contact.css">
 </head>
 
@@ -398,7 +398,36 @@
 
 </div>
 
-<script src="contact.js"></script>
+<script>
+    const form = document.getElementById("contactForm");
+
+const modal = document.getElementById("messageModal");
+
+const messageText = document.getElementById("messageText");
+
+const closeBtn = document.getElementById("closeMessageBtn");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const name = document.getElementById("fullName").value.trim();
+
+    messageText.textContent =
+    `Dear ${name}, we've received your message and will get back to you shortly. Thank you for contacting Flavorio.`;
+
+    modal.classList.add("show");
+
+    form.reset();
+
+});
+
+closeBtn.addEventListener("click", function(){
+
+    modal.classList.remove("show");
+
+});
+</script>
 </body>
 </body>
 

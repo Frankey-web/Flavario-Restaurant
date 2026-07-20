@@ -7,7 +7,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Reservations | Flavorio</title>
+<title>Flavario-Restaurant | Reservations</title>
 
 <link rel="stylesheet" href="reservation.css">
 
@@ -655,7 +655,481 @@ LOCATION MAP
 
 </div>
 </div>
-<script src="reservation.js"></script>
+<script>
+    const dateInput = document.getElementById("reservationDate");
+
+const deleteReservationBtn =
+document.getElementById("deleteReservationBtn");
+
+const today = new Date().toISOString().split("T")[0];
+
+dateInput.min = today;
+
+const timeInput = document.getElementById("reservationTime");
+
+dateInput.addEventListener("change", function(){
+
+    const today = new Date().toISOString().split("T")[0];
+
+    if(this.value === today){
+
+        const now = new Date();
+
+        const hours = String(now.getHours()).padStart(2,"0");
+        const minutes = String(now.getMinutes()).padStart(2,"0");
+
+        timeInput.min = `${hours}:${minutes}`;
+
+    }else{
+
+        timeInput.removeAttribute("min");
+
+    }
+
+});
+const viewPassBtn = document.getElementById("viewPassBtn");
+const passModal = document.getElementById("passModal");
+const passContent = document.getElementById("passContent");
+const closePassBtn = document.getElementById("closePassBtn");
+
+const form = document.getElementById("reservationForm");
+
+const modal = document.getElementById("reservationModal");
+const spinner = document.getElementById("spinner");
+const statusIcon = document.getElementById("statusIcon");
+
+const modalTitle = document.getElementById("modalTitle");
+const modalMessage = document.getElementById("modalMessage");
+const reservationResult = document.getElementById("reservationResult");
+const doneBtn = document.getElementById("doneBtn");
+
+const tableLocations = [
+    {
+        table: "Table 3",
+        location: "Garden View"
+    },
+    {
+        table: "Table 5",
+        location: "Near Entrance"
+    },
+    {
+        table: "Table 8",
+        location: "Center Hall"
+    },
+    {
+        table: "Table 10",
+        location: "Right Corner"
+    },
+    {
+        table: "Table 12",
+        location: "Left Corner • Window Side"
+    },
+    {
+        table: "Table 15",
+        location: "Private Booth"
+    },
+    {
+        table: "Table 18",
+        location: "VIP Dining Area"
+    }
+];
+
+function formatDate(dateValue){
+
+    const date = new Date(dateValue);
+
+    return date.toLocaleDateString("en-US",{
+        weekday:"long",
+        day:"numeric",
+        month:"long",
+        year:"numeric"
+    });
+
+}
+
+function formatTime(timeValue){
+
+    const [hours, minutes] = timeValue.split(":");
+
+    const date = new Date();
+
+    date.setHours(hours);
+    date.setMinutes(minutes);
+
+    return date.toLocaleTimeString("en-US",{
+        hour:"numeric",
+        minute:"2-digit",
+        hour12:true
+    });
+
+}
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+    
+    const existingReservation =
+localStorage.getItem("flavorioReservation");
+
+if(existingReservation){
+
+    alert(
+        "You already have a reserved table. Delete your current reservation before making a new one."
+    );
+
+    return;
+}
+
+    // Read all form values
+    const fullName = document.getElementById("fullName").value.trim();
+
+    const reservationDate =
+    document.getElementById("reservationDate").value;
+
+    const reservationTime =
+    document.getElementById("reservationTime").value;
+    
+
+    
+    const selectedDateTime = new Date(`${reservationDate}T${reservationTime}`);
+
+if(selectedDateTime <= new Date()){
+
+    alert("Please choose a future reservation date and time.");
+
+    return;
+
+}
+    
+    const formattedDate = formatDate(reservationDate);
+
+const formattedTime = formatTime(reservationTime);
+
+    const guests =
+    document.getElementById("guestCount").value;
+
+    const specialRequest =
+    document.getElementById("specialRequest").value.trim();
+
+    // Pick a random available table
+    const selectedTable =
+    tableLocations[
+        Math.floor(Math.random() * tableLocations.length)
+    ];
+
+    // Reset modal
+    modal.classList.add("show");
+
+    spinner.style.display = "block";
+
+    statusIcon.style.display = "none";
+
+    reservationResult.style.display = "none";
+
+    doneBtn.style.display = "none";
+
+    modalMessage.style.display = "block";
+
+    modalTitle.textContent =
+    "Checking table availability...";
+
+    modalMessage.textContent =
+    "Please wait while we search for the best available table.";
+    // ---------- Stage 1 ----------
+
+spinner.style.display = "block";
+statusIcon.style.display = "none";
+
+setTimeout(function(){
+
+    spinner.style.display = "none";
+
+    statusIcon.style.display = "block";
+
+    statusIcon.src = "check-circle.svg";
+
+    modalTitle.textContent =
+    "Table Vacant";
+
+    modalMessage.textContent =
+    "Excellent! A suitable table is available for your reservation.";
+
+},6000);
+
+
+// ---------- Stage 2 ----------
+
+setTimeout(function(){
+
+    statusIcon.src = "table.svg";
+
+    modalTitle.textContent =
+    `Reserving table for ${guests} guest${guests == 1 ? "" : "s"}...`;
+
+    modalMessage.textContent =
+    "Please wait while we prepare your reservation.";
+
+},8000);
+
+// ---------- Stage 3 ----------
+
+setTimeout(function(){
+
+    statusIcon.src = "success.svg";
+
+    modalTitle.textContent =
+    "Reservation Confirmed";
+
+    modalMessage.style.display = "none";
+
+    reservationResult.style.display = "block";
+
+    let requestHTML = "";
+
+    if(specialRequest !== ""){
+
+        requestHTML = `
+
+        <div class="confirm-section">
+
+            <h4>Special Request</h4>
+
+            <p>
+                "${specialRequest}"
+            </p>
+
+            <small>
+                We've taken note of your request and our team will do
+                their best to accommodate it during your visit.
+            </small>
+
+        </div>
+
+        `;
+
+    }
+
+    reservationResult.innerHTML = `
+
+        <div class="confirm-section">
+
+            <h3>
+                Thank You, ${fullName}!
+            </h3>
+
+            <p>
+                Your table has been successfully reserved.
+            </p>
+
+        </div>
+
+        <div class="confirm-section">
+
+            <h4>Reservation Details</h4>
+
+            <p><strong>Guests:</strong> ${guests}</p>
+
+            <p><strong>Date:</strong> ${formattedDate}</p>
+
+            <p><strong>Time:</strong> ${formattedTime}</p>
+
+        </div>
+
+        <div class="confirm-section">
+
+            <h4>Your Table</h4>
+
+            <p><strong>${selectedTable.table}</strong></p>
+
+            <p>${selectedTable.location}</p>
+
+        </div>
+
+        ${requestHTML}
+
+        <div class="confirm-section">
+
+            <small>
+                Please arrive within 15 minutes of your reservation
+                time. We look forward to welcoming you to Flavorio.
+            </small>
+
+        </div>
+
+    `;
+    
+    passContent.innerHTML = `
+
+<div class="pass-section">
+
+<h4>Guest</h4>
+
+<p>${fullName}</p>
+
+</div>
+
+<div class="pass-section">
+
+<h4>Reservation</h4>
+
+<p>${guests} Guest${guests == 1 ? "" : "s"}</p>
+
+<p>${formattedDate}</p>
+
+<p>${formattedTime}</p>
+
+</div>
+
+<div class="pass-section">
+
+<h4>Table</h4>
+
+<p>${selectedTable.table}</p>
+
+<p>${selectedTable.location}</p>
+
+</div>
+
+${specialRequest ? `
+
+<div class="pass-section">
+
+<h4>Special Request</h4>
+
+<p>${specialRequest}</p>
+
+</div>
+
+` : ""}
+
+`;
+
+const reservationData = {
+    fullName,
+    guests,
+    formattedDate,
+    formattedTime,
+    reservationTime,
+    specialRequest,
+    table: selectedTable.table,
+    location: selectedTable.location,
+    date: reservationDate
+};
+
+localStorage.setItem(
+    "flavorioReservation",
+    JSON.stringify(reservationData)
+);
+
+    doneBtn.style.display = "block";
+    viewPassBtn.classList.add("show");
+    deleteReservationBtn.classList.add("show");
+
+},11000);
+
+});
+
+doneBtn.addEventListener("click", function(){
+
+    modal.classList.remove("show");
+
+    
+
+    spinner.style.display = "block";
+
+    statusIcon.style.display = "none";
+
+    modalMessage.style.display = "block";
+
+    reservationResult.style.display = "none";
+
+});
+
+viewPassBtn.addEventListener("click", function(){
+
+    passModal.classList.add("show");
+
+});
+
+closePassBtn.addEventListener("click", function () {
+    passModal.classList.remove("show");
+});
+
+window.addEventListener("DOMContentLoaded", function () {
+
+    const saved = JSON.parse(localStorage.getItem("flavorioReservation"));
+
+    if (!saved) return;
+
+    // Remove if reservation date has passed
+    const reservationDateTime = new Date(`${saved.date}T${saved.reservationTime}`);
+
+if (reservationDateTime < new Date()) {
+    localStorage.removeItem("flavorioReservation");
+    return;
+}
+
+    passContent.innerHTML = `
+        <div class="pass-section">
+            <h4>Guest</h4>
+            <p>${saved.fullName}</p>
+        </div>
+
+        <div class="pass-section">
+            <h4>Reservation</h4>
+            <p>${saved.guests} Guest${saved.guests == 1 ? "" : "s"}</p>
+            <p>${saved.formattedDate}</p>
+            <p>${saved.formattedTime}</p>
+        </div>
+
+        <div class="pass-section">
+            <h4>Table</h4>
+            <p>${saved.table}</p>
+            <p>${saved.location}</p>
+        </div>
+
+        ${
+            saved.specialRequest
+                ? `
+        <div class="pass-section">
+            <h4>Special Request</h4>
+            <p>${saved.specialRequest}</p>
+        </div>
+        `
+                : ""
+        }
+    `;
+
+    viewPassBtn.classList.add("show");
+    deleteReservationBtn.classList.add("show");
+});
+
+deleteReservationBtn.addEventListener("click", function(){
+
+    const confirmed = confirm(
+        "Are you sure you want to cancel your reservation?"
+    );
+
+    if(!confirmed){
+        return;
+    }
+
+    localStorage.removeItem("flavorioReservation");
+
+    passModal.classList.remove("show");
+
+    viewPassBtn.classList.remove("show");
+
+    deleteReservationBtn.classList.remove("show");
+
+    form.reset();
+
+    alert("Your reservation has been cancelled.");
+    
+    window.location="reservation.html";
+
+});
+</script>
 </body>
 
 </html>
