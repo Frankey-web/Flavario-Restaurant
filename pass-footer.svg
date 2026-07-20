@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 220 40">
+
+<path
+d="M10 20
+Q40 5 70 20
+T130 20
+T190 20"
+
+fill="none"
+
+stroke="#D89B2D"
+
+stroke-width="2"/>
+
+<circle
+cx="110"
+cy="20"
+r="4"
+fill="#D89B2D"/>
+
+</svg>

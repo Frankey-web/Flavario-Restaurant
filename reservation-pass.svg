@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 100 100">
+
+<rect
+x="18"
+y="15"
+width="64"
+height="70"
+rx="8"
+
+fill="#D89B2D"/>
+
+<rect
+x="28"
+y="30"
+width="44"
+height="5"
+
+fill="#111"/>
+
+<rect
+x="28"
+y="43"
+width="32"
+height="5"
+
+fill="#111"/>
+
+<rect
+x="28"
+y="56"
+width="24"
+height="5"
+
+fill="#111"/>
+
+<circle
+cx="67"
+cy="62"
+r="9"
+
+fill="#111"/>
+
+<path
+d="M63 62
+L66 65
+L72 58"
+
+fill="none"
+
+stroke="#D89B2D"
+
+stroke-width="2.5"
+
+stroke-linecap="round"
+
+stroke-linejoin="round"/>
+
+</svg>

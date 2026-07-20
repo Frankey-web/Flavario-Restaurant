@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+
+    <circle
+        cx="50"
+        cy="50"
+        r="45"
+        fill="#D89B2D"/>
+
+    <path
+        d="M30 54
+           L44 68
+           L72 38"
+        fill="none"
+        stroke="#111111"
+        stroke-width="7"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+    <path
+        d="M50 15
+           L53 23
+           L61 26
+           L53 29
+           L50 37
+           L47 29
+           L39 26
+           L47 23
+           Z"
+        fill="#111111"/>
+
+</svg>

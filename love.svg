@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64 64"
+     fill="none"
+     stroke="#D89B2B"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+    <!-- Chef Hat -->
+    <path d="M18 28
+             C18 22 22 18 27 18
+             C29 14 34 14 37 18
+             C42 18 46 22 46 28
+             C49 29 50 32 50 35
+             C50 39 47 42 43 42
+             H21
+             C17 42 14 39 14 35
+             C14 32 15 29 18 28Z"/>
+
+    <!-- Hat Band -->
+    <path d="M21 42V48H43V42"/>
+
+    <!-- Heart -->
+    <path d="M32 31
+             C30 28 26 28 25 31
+             C24 34 26 36 32 40
+             C38 36 40 34 39 31
+             C38 28 34 28 32 31Z"
+          fill="#D89B2B"
+          stroke="none"/>
+
+</svg>
